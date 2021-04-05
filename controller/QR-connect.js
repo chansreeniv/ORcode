@@ -1,3 +1,5 @@
+const Generator = require("../model/QR-logic");
+
 exports.getIndexPage = (req,res) => {
     res.render('index', {pageTitle: 'Home Page'});
 }
@@ -7,5 +9,9 @@ exports.getViewPage = (req, res) => {
 }
 
 exports.getGeneratePage = (req, res) =>{
-    res.render('generate', { pageTitle: 'generate Page'});
+    const generator = new Generator('www.google.com');
+    generator.generateQR((url) => {
+        console.log(url);
+        res.render('generate', { pageTitle: 'generate Page', imageUrl: url});
+    });
 }
