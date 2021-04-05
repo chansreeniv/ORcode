@@ -10,6 +10,9 @@ module.exports = class Generator {
         });
     }
 
+    // https://www.npmjs.com/package/node-quirc
+    
+    
     // app.use("/", (req, res) => {
 //   var QRCode = require("qrcode");
 
